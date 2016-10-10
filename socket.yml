@@ -41,7 +41,7 @@ endpoints:
         message:
           type: string
           description: Email message
-          example: "I would like to complain about the product quality. It was of subpar and I demand a refund!""
+          example: "I would like to complain about the product quality. It was of subpar and I demand a refund!"
       response:
         mimetype: application/json
         examples:
