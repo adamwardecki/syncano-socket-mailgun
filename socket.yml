@@ -1,0 +1,79 @@
+name: mailgun
+version: 0.1
+description: Mailgun integration that allows for sending emails through Syncano
+Platform
+author:
+  name: Adam Wardecki
+  email: adam.wardecki@syncano.com
+script_author:
+  name: Devin Visslailli
+  email: devin.viss@syncano.com
+config:
+   prompt:
+      fromEmail:
+          type: string
+          description: Email from which the mails will be sent
+      fromName:
+          type: string
+          description: Name of the person sending emails
+      mailgunApiKey:
+          type: string
+          description: Can be found in Mailgun domains section
+      mailgunDomain:
+          type: string
+          description: Can be found in Mailgun domains section
+      syncanoAccountKey:
+          type: string
+          description: Your Account Key needed for Script Socket execution
+endpoints:
+  run_send_email:
+    POST:
+      script: send_email
+      description: Sends an email to a provided recipient
+      parameters:
+        email:
+          type: string
+          description: Email of the recipient
+          example: "walter.white@lab.com"
+        subject:
+          type: string
+          description: Email subject
+          example: "Faulty merchandise complaint"
+        message:
+          type: string
+          description: Email message
+          example: "I would like to complain about the product quality. It was of subpar and I demand a refund!""
+      response:
+        mimetype: application/json
+        examples:
+          - exit_code: 200
+            description: "Email sent"
+            example: >
+              {
+                "status":"success",
+                "duration":537,
+                "result": {
+                  "stderr":"",
+                  "stdout":"Your message was sent"
+                  },
+                "executed_at":"2016-10-07T15:37:27.044265Z",
+                "id":4
+              }
+          - exit_code: 200
+            description: "Email sent to incorrect recipient when in sandbox mode."
+            example: >
+              {
+                "status":"success",
+                "duration":469,
+                "result": {
+                  "stderr":"",
+                  "stdout":"Sandbox subdomains are for test purposes only. Please add your own domain or add the address to authorized recipients in domain settings."
+                  },
+                "executed_at":"2016-10-07T15:40:31.991815Z",
+                "id":6
+                }
+dependencies:
+  scripts:
+    search:
+      runtime_name: nodejs_library_v1.0
+      file: scripts/sendEmail.js
