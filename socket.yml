@@ -12,7 +12,7 @@ config:
     prompt: true
   fromName:
     prompt: true
-  mailgunApiKey:
+  mailgunAPIKey:
     prompt: true
   mailgunDomain:
     prompt: true
