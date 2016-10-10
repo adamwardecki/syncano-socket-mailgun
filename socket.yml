@@ -8,22 +8,16 @@ script_author:
   name: Devin Visslailli
   email: devin.viss@syncano.com
 config:
-   prompt:
-      fromEmail:
-          type: string
-          description: Email from which the mails will be sent
-      fromName:
-          type: string
-          description: Name of the person sending emails
-      mailgunApiKey:
-          type: string
-          description: Can be found in Mailgun domains section
-      mailgunDomain:
-          type: string
-          description: Can be found in Mailgun domains section
-      syncanoAccountKey:
-          type: string
-          description: Your Account Key needed for Script Socket execution
+  fromEmail:
+    prompt: true
+  fromName:
+    prompt: true
+  mailgunApiKey:
+    prompt: true
+  mailgunDomain:
+    prompt: true
+  syncanoAccountKey:
+    prompt: true
 endpoints:
   run_send_email:
     POST:
