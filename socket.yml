@@ -21,7 +21,7 @@ config:
 endpoints:
   run_send_email:
     POST:
-      script: sendEmail
+      script: send_email
       description: Sends an email to a provided recipient
       parameters:
         email:
@@ -69,4 +69,4 @@ dependencies:
   scripts:
     search:
       runtime_name: nodejs_library_v1.0
-      file: scripts/sendEmail.js
+      file: scripts/send_email.js
