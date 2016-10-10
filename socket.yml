@@ -70,3 +70,10 @@ dependencies:
     send_email:
       runtime_name: nodejs_library_v1.0
       file: scripts/send_email.js
+  classes:
+    maillogs:
+      schema:
+        - name: toEmail
+          type: string
+        - name: subject
+          type: string

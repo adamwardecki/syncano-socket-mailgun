@@ -58,7 +58,6 @@ function logMailReceipts() { // logs the mail receipt in Syncano
     var log = { // log object
         "toEmail":toEmail,
         "subject":subject,
-        "attachment":'false',
         "className": 'maillogs'
     }
 
