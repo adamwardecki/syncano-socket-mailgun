@@ -1,7 +1,6 @@
 name: mailgun
 version: 0.1
-description: Mailgun integration that allows for sending emails through Syncano
-Platform
+description: Mailgun integration that allows for sending emails through Syncano Platform
 author:
   name: Adam Wardecki
   email: adam.wardecki@syncano.com
