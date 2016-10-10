@@ -21,7 +21,7 @@ config:
 endpoints:
   run_send_email:
     POST:
-      script: send_email
+      script: sendEmail
       description: Sends an email to a provided recipient
       parameters:
         email:
