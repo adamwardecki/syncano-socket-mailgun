@@ -77,3 +77,5 @@ dependencies:
           type: string
         - name: subject
           type: string
+        - name: message
+          type: string
